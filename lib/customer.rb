@@ -16,4 +16,12 @@ class Customer
 
   def new_meal(custormer, total, tip=0)
     Meal.new(self, customer, total, tip)
+  end
+
+  def meals
+    Meal.all.select do |meal|
+      meal.customer == self
+    end
+  end
+
 end
